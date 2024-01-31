@@ -279,6 +279,7 @@ print("Text to Change: ", text_to_change)
 print("Expanded Variation:", response)
 ```
 
+
 ```output
 Text to Change:
 Senators Josh Hawley and Richard Blumenthal expressed their recognition of the transformative nature of AI and the need to understand its implications
