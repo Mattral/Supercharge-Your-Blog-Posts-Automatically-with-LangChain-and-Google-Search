@@ -5,7 +5,7 @@ These days, artificial intelligence is changing the copywriting field by serving
 
 In this Repo, we will take you step by step through the process of building an application that can effortlessly expand text sections. The process begins by asking an LLM (ChatGPT) to generate a few search queries based on the text at hand. These queries are then will be used to search the Internet using Google Search API that, captures relevant information on the subject. Lastly, the most relevant results will be presented as context to the model to suggest better content.
 
-We've got three variables here that hold an article's title and content (text_all). (From Artificial Intelligence News) Also, the text_to_change variable specifies which part of the text we want to expand upon. These constants are mentioned as a reference and will remain unchanged throughout the lesson.
+We've got three variables here that hold an article's title and content (text_all). (From Artificial Intelligence News) Also, the text_to_change variable specifies which part of the text we want to expand upon. These constants are mentioned as a reference and will remain unchanged throughout the repo.
 
 ```
 title = "OpenAI CEO: AI regulation ‘is essential’"
@@ -21,7 +21,7 @@ The following diagram explains the workflow of this project.
 
 First we generate candidate search queries from the selected paragraph that we want to expand. The queries are then used to extract relevant documents using a search engine (e.g. Bing or Google Search), which are the split into small chunks. We then compute embeddings of these chunks and save chunks and embeddings in a Deep Lake dataset. Last, the most similar chunks to the paragraph that we want to expand are retrieved from Deep Lake, and used in a prompt to expand the paragraph with further knowledge.
 
-Remember to install the required packages with the following command: pip install langchain==0.0.208 deeplake openai==0.27.8 tiktoken. Refer to the course introduction if you are looking for the specific versions we used to write the codes in this lesson. Additionally, install the newspaper3k package with version 0.2.8.
+Remember to install the required packages with the following command: pip install langchain==0.0.208 deeplake openai==0.27.8 tiktoken. Refer to the course introduction if you are looking for the specific versions we used to write the codes in this repo. Additionally, install the newspaper3k package with version 0.2.8.
 
 ```
 !pip install -q newspaper3k==0.2.8 python-dotenv
@@ -176,7 +176,7 @@ Number of chunks: 46
 
 ```
 
-As you can see, 46 chunks of data are in the docs variable. It is time to find the most relevant chunks to pass them as context to the large language model. The OpenAIEmbeddings class will use OpenAI to convert the texts into vector space that holds semantics. We proceeded to embed both document chunks and the desired sentence from the main article that was chosen for expansion. The selected sentence was chosen at the beginning of this lesson and represented by the text_to_change variable.
+As you can see, 46 chunks of data are in the docs variable. It is time to find the most relevant chunks to pass them as context to the large language model. The OpenAIEmbeddings class will use OpenAI to convert the texts into vector space that holds semantics. We proceeded to embed both document chunks and the desired sentence from the main article that was chosen for expansion. The selected sentence was chosen at the beginning of this repo and represented by the text_to_change variable.
 
 ```
 from langchain.embeddings import OpenAIEmbeddings
