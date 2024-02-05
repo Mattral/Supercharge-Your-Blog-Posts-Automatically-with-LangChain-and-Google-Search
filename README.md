@@ -21,7 +21,7 @@ The following diagram explains the workflow of this project.
 
 First we generate candidate search queries from the selected paragraph that we want to expand. The queries are then used to extract relevant documents using a search engine (e.g. Bing or Google Search), which are the split into small chunks. We then compute embeddings of these chunks and save chunks and embeddings in a Deep Lake dataset. Last, the most similar chunks to the paragraph that we want to expand are retrieved from Deep Lake, and used in a prompt to expand the paragraph with further knowledge.
 
-Remember to install the required packages with the following command: pip install langchain==0.0.208 deeplake openai==0.27.8 tiktoken. Refer to the course introduction if you are looking for the specific versions we used to write the codes in this repo. Additionally, install the newspaper3k package with version 0.2.8.
+Remember to install the required packages with the following command: pip install langchain==0.0.208 deeplake openai==0.27.8 tiktoken. Additionally, install the newspaper3k package with version 0.2.8.
 
 ```
 !pip install -q newspaper3k==0.2.8 python-dotenv
